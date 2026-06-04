@@ -34,14 +34,14 @@ export default function RulesPage() {
             {CLAN_RULES.map((rule, index) => (
               <div 
                 key={rule.number}
-                className="glass-panel p-8 relative overflow-hidden group hover:border-ryukai-blue/50 transition-all duration-300"
+                className="glass-panel p-8 relative overflow-hidden group hover:border-white/30 transition-all duration-300"
               >
                 {/* Background glow on hover */}
-                <div className="absolute inset-0 bg-ryukai-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-6">
-                    <div className="w-12 h-12 rounded bg-ryukai-dark border border-ryukai-border flex items-center justify-center text-ryukai-blue group-hover:scale-110 group-hover:border-ryukai-blue/50 group-hover:shadow-[0_0_15px_rgba(0,68,255,0.3)] transition-all duration-300">
+                    <div className="w-12 h-12 rounded bg-ryukai-dark border border-ryukai-border flex items-center justify-center text-white group-hover:scale-110 group-hover:border-white/50 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
                       {getIcon(rule.icon)}
                     </div>
                     <span className="font-heading font-bold text-5xl text-white/5 select-none group-hover:text-white/10 transition-colors">

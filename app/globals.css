@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #05070a;
+  --color-background: #000000;
   --color-foreground: #e0e6ed;
-  --color-ryukai-dark: #05070a;
-  --color-ryukai-blue: #0033cc;
+  --color-ryukai-dark: #000000;
+  --color-ryukai-blue: #ffffff;
   --color-ryukai-light: #e0e6ed;
-  --color-ryukai-card: rgba(15, 18, 25, 0.6);
-  --color-ryukai-border: rgba(30, 40, 60, 0.5);
+  --color-ryukai-card: rgba(10, 10, 10, 0.8);
+  --color-ryukai-border: rgba(255, 255, 255, 0.1);
   
   --font-heading: var(--font-rajdhani), sans-serif;
   --font-body: var(--font-inter), sans-serif;
@@ -15,7 +15,7 @@
 
 @layer base {
   :root {
-    --background: #05070a;
+    --background: #000000;
     --foreground: #e0e6ed;
   }
   
@@ -43,10 +43,10 @@
   }
   
   .text-glow {
-    text-shadow: 0 0 15px rgba(0, 51, 204, 0.8), 0 0 30px rgba(0, 51, 204, 0.4);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
   }
   
   .box-glow {
-    box-shadow: 0 0 25px rgba(0, 51, 204, 0.4), 0 0 50px rgba(0, 51, 204, 0.2);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1), 0 0 50px rgba(255, 255, 255, 0.05);
   }
 }

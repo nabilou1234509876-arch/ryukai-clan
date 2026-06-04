@@ -16,17 +16,17 @@ export default function FoundersSection() {
             viewport={{ once: true }}
             className="font-heading font-bold text-4xl md:text-5xl text-white uppercase tracking-wider mb-4"
           >
-            The <span className="text-ryukai-blue">Founders</span>
+            The <span className="text-gray-400">Founders</span>
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-24 h-1 bg-ryukai-blue box-glow mx-auto"
+            className="w-24 h-1 bg-white box-glow mx-auto"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {FOUNDERS.map((founder, index) => (
             <motion.div
               key={founder.id}
@@ -37,13 +37,13 @@ export default function FoundersSection() {
               className="glass-panel group relative overflow-hidden p-1 rounded-lg"
             >
               {/* Card border gradient effect */}
-              <div className="absolute inset-0 bg-gradient-to-b from-ryukai-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="bg-ryukai-dark/80 p-6 h-full rounded flex flex-col items-center relative z-10 border border-white/5 group-hover:border-ryukai-blue/30 transition-colors duration-300">
+              <div className="bg-ryukai-dark/80 p-6 h-full rounded flex flex-col items-center relative z-10 border border-white/5 group-hover:border-white/30 transition-colors duration-300">
                 
                 {/* Avatar */}
                 <div className="relative w-28 h-28 mb-6">
-                  <div className="absolute inset-0 rounded-full border-2 border-ryukai-blue/30 group-hover:border-ryukai-blue scale-[1.1] transition-all duration-300 group-hover:scale-100" />
+                  <div className="absolute inset-0 rounded-full border-2 border-white/30 group-hover:border-white scale-[1.1] transition-all duration-300 group-hover:scale-100" />
                   <div className="w-full h-full rounded-full overflow-hidden bg-ryukai-dark border border-ryukai-border flex items-center justify-center relative">
                     <Discord size={40} className="text-gray-600 absolute" />
                     
@@ -58,7 +58,7 @@ export default function FoundersSection() {
                   
                   {/* Status indicator */}
                   <div className="absolute bottom-1 right-1 w-5 h-5 bg-ryukai-dark rounded-full flex items-center justify-center">
-                    <div className="w-3 h-3 bg-ryukai-blue rounded-full box-glow" />
+                    <div className="w-3 h-3 bg-white rounded-full box-glow" />
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default function FoundersSection() {
                   <h3 className="font-heading font-bold text-2xl text-white uppercase tracking-wide">
                     {founder.displayName}
                   </h3>
-                  <p className="text-ryukai-blue font-heading uppercase tracking-widest text-sm font-semibold">
+                  <p className="text-gray-400 font-heading uppercase tracking-widest text-sm font-semibold">
                     {founder.role || "Founder"}
                   </p>
                   <p className="text-gray-500 font-body text-sm mt-2">

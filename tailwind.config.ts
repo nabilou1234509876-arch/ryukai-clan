@@ -10,11 +10,11 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "ryukai-dark": "#05070a", // Deepest background
-        "ryukai-blue": "#0033cc", // Primary brand (darker blue)
+        "ryukai-dark": "#000000", // Pitch black background
+        "ryukai-blue": "#ffffff", // Primary brand (switched to white/monochrome)
         "ryukai-light": "#e0e6ed", // Text color
-        "ryukai-card": "rgba(15, 18, 25, 0.6)", // Glass card
-        "ryukai-border": "rgba(30, 40, 60, 0.5)", // Glass border
+        "ryukai-card": "rgba(10, 10, 10, 0.8)", // Dark glass card
+        "ryukai-border": "rgba(255, 255, 255, 0.1)", // Subtle border
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

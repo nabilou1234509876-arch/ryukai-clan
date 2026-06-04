@@ -9,7 +9,7 @@ export const CLAN_CONFIG = {
   game: "The Strongest Battlegrounds",
   discordInvite: "https://discord.gg/98JcUEP9",
   discordServerId: "YOUR_SERVER_ID", // Optional for widget later
-  logo: "/logo.png", // Added logo path
+  logo: "/logo.jpg", // Added logo path
 
   socialLinks: {
     discord: "https://discord.gg/98JcUEP9",

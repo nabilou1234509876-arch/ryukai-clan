@@ -51,7 +51,7 @@ export default function HeroSection() {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = `rgba(0, 80, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -95,43 +95,54 @@ export default function HeroSection() {
       
       {/* Background Gradients */}
       <div className="absolute inset-0 bg-ryukai-dark z-0 opacity-70" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-ryukai-blue/20 rounded-full blur-[120px] z-0 pointer-events-none" />
+      <motion.div 
+        animate={{ 
+          scale: [1, 1.2, 1],
+          opacity: [0.1, 0.15, 0.1]
+        }}
+        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-white rounded-full blur-[120px] z-0 pointer-events-none" 
+      />
 
       {/* Content */}
       <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8 relative"
         >
           {/* Main Logo Container */}
-          <div className="w-40 h-40 md:w-56 md:h-56 rounded-full border-2 border-ryukai-blue/40 flex items-center justify-center relative bg-ryukai-dark shadow-[0_0_60px_rgba(0,51,204,0.5)] overflow-hidden group">
-            <div className="absolute inset-0 bg-ryukai-blue/10 group-hover:bg-ryukai-blue/20 transition-colors duration-500 z-0" />
+          <motion.div 
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="w-40 h-40 md:w-56 md:h-56 rounded-full border border-white/20 flex items-center justify-center relative bg-black shadow-[0_0_60px_rgba(255,255,255,0.15)] overflow-hidden group"
+          >
+            <div className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors duration-500 z-0" />
             <img 
               src={CLAN_CONFIG.logo} 
               alt="Ryukai Logo" 
-              className="w-full h-full object-contain relative z-10 p-4 drop-shadow-[0_0_20px_rgba(0,80,255,0.6)]" 
+              className="w-full h-full object-contain relative z-10 p-4 drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]" 
             />
             
             {/* Spinning ring */}
             <motion.div 
               animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-              className="absolute -inset-4 rounded-full border border-ryukai-blue/30 border-t-ryukai-blue border-l-ryukai-blue"
+              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+              className="absolute -inset-4 rounded-full border border-white/10 border-t-white/30 border-l-white/30"
             />
             <motion.div 
               animate={{ rotate: -360 }}
-              transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
-              className="absolute -inset-8 rounded-full border border-dashed border-ryukai-blue/20"
+              transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+              className="absolute -inset-8 rounded-full border border-dashed border-white/10"
             />
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="font-heading font-bold text-5xl md:text-7xl lg:text-8xl tracking-widest text-white uppercase mb-4 text-glow"
         >
           {CLAN_CONFIG.name}
@@ -154,19 +165,19 @@ export default function HeroSection() {
         >
           <Link
             href="/tryouts"
-            className="group relative px-8 py-4 bg-ryukai-blue text-white font-heading font-bold text-lg uppercase tracking-wider rounded-sm overflow-hidden box-glow"
+            className="group relative px-8 py-4 bg-white text-black font-heading font-bold text-lg uppercase tracking-wider rounded-sm overflow-hidden box-glow"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
               Join Clan <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+            <div className="absolute inset-0 bg-gray-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           </Link>
           
           <a
             href={CLAN_CONFIG.discordInvite}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative px-8 py-4 glass-panel text-white font-heading font-bold text-lg uppercase tracking-wider rounded-sm hover:border-ryukai-blue/80 hover:bg-ryukai-blue/10 transition-all duration-300"
+            className="group relative px-8 py-4 glass-panel text-white font-heading font-bold text-lg uppercase tracking-wider rounded-sm hover:border-white hover:bg-white/10 transition-all duration-300"
           >
             Join Discord
           </a>
@@ -182,9 +193,9 @@ export default function HeroSection() {
       >
         <span className="text-xs uppercase tracking-widest font-heading text-gray-500">Scroll</span>
         <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 1.5 }}
-          className="w-[1px] h-12 bg-gradient-to-b from-ryukai-blue to-transparent"
+          animate={{ y: [0, 10, 0], opacity: [0.3, 1, 0.3] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent"
         />
       </motion.div>
     </section>

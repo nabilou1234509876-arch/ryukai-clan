@@ -13,8 +13,8 @@ export default function OverviewPage() {
           {/* History */}
           <section className="space-y-6">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 bg-ryukai-blue/10 border border-ryukai-blue/30 rounded flex items-center justify-center">
-                <Shield className="text-ryukai-blue" size={24} />
+              <div className="w-12 h-12 bg-white/10 border border-white/30 rounded flex items-center justify-center">
+                <Shield className="text-white" size={24} />
               </div>
               <h2 className="font-heading font-bold text-3xl text-white uppercase tracking-wider">Clan History</h2>
             </div>
@@ -31,13 +31,13 @@ export default function OverviewPage() {
           {/* Mission */}
           <section className="space-y-6">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 bg-ryukai-blue/10 border border-ryukai-blue/30 rounded flex items-center justify-center">
-                <Target className="text-ryukai-blue" size={24} />
+              <div className="w-12 h-12 bg-white/10 border border-white/30 rounded flex items-center justify-center">
+                <Target className="text-white" size={24} />
               </div>
               <h2 className="font-heading font-bold text-3xl text-white uppercase tracking-wider">Our Mission</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="glass-panel p-6 border-t-2 border-t-ryukai-blue">
+              <div className="glass-panel p-6 border-t-2 border-t-white">
                 <h3 className="font-heading font-bold text-xl text-white uppercase mb-3">Dominate the Scene</h3>
                 <p className="text-gray-400 text-sm">To be recognized universally as the most formidable and skilled clan in the game. We play to win, and we prepare endlessly to ensure we do.</p>
               </div>
@@ -49,17 +49,18 @@ export default function OverviewPage() {
           </section>
 
           {/* Requirements & Expectations */}
+          {/* Expectations */}
           <section className="space-y-6">
             <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 bg-ryukai-blue/10 border border-ryukai-blue/30 rounded flex items-center justify-center">
-                <Zap className="text-ryukai-blue" size={24} />
+              <div className="w-12 h-12 bg-white/10 border border-white/30 rounded flex items-center justify-center">
+                <Zap className="text-white" size={24} />
               </div>
               <h2 className="font-heading font-bold text-3xl text-white uppercase tracking-wider">Expectations</h2>
             </div>
             <div className="space-y-4">
               <div className="flex gap-4 items-start glass-panel p-6 rounded">
-                <div className="mt-1 w-6 h-6 rounded-full bg-ryukai-blue/20 flex items-center justify-center flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-ryukai-blue" />
+                <div className="mt-1 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-white" />
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-lg text-white uppercase">Active Participation</h4>
@@ -68,8 +69,8 @@ export default function OverviewPage() {
               </div>
               
               <div className="flex gap-4 items-start glass-panel p-6 rounded">
-                <div className="mt-1 w-6 h-6 rounded-full bg-ryukai-blue/20 flex items-center justify-center flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-ryukai-blue" />
+                <div className="mt-1 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-white" />
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-lg text-white uppercase">Continuous Improvement</h4>
@@ -78,8 +79,8 @@ export default function OverviewPage() {
               </div>
 
               <div className="flex gap-4 items-start glass-panel p-6 rounded">
-                <div className="mt-1 w-6 h-6 rounded-full bg-ryukai-blue/20 flex items-center justify-center flex-shrink-0">
-                  <div className="w-2 h-2 rounded-full bg-ryukai-blue" />
+                <div className="mt-1 w-6 h-6 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-white" />
                 </div>
                 <div>
                   <h4 className="font-heading font-bold text-lg text-white uppercase">Professional Representation</h4>

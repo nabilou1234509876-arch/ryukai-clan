@@ -12,7 +12,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
     <div className="relative pt-32 pb-20 overflow-hidden border-b border-ryukai-border">
       {/* Background elements */}
       <div className="absolute inset-0 bg-ryukai-dark z-0" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-ryukai-blue/10 rounded-full blur-[100px] z-0 pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-white/5 rounded-full blur-[100px] z-0 pointer-events-none" />
       
       {/* Pattern overlay */}
       <div className="absolute inset-0 opacity-[0.03] z-0" 
@@ -33,7 +33,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-body text-ryukai-blue uppercase tracking-[0.2em] text-sm font-semibold mb-6"
+          className="font-body text-gray-400 uppercase tracking-[0.2em] text-sm font-semibold mb-6"
         >
           {subtitle}
         </motion.p>
@@ -42,7 +42,7 @@ export default function PageHeader({ title, subtitle }: PageHeaderProps) {
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-24 h-1 bg-ryukai-blue mx-auto box-glow"
+          className="w-24 h-1 bg-white mx-auto box-glow"
         />
       </div>
     </div>

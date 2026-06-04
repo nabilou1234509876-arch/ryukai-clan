@@ -45,14 +45,14 @@ export default function DiscordWidget() {
             {/* Left side info */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <div className="flex items-center gap-4 mb-4">
-                <div className="w-16 h-16 rounded-2xl bg-[#5865F2] flex items-center justify-center shadow-lg">
-                  <Discord size={32} className="text-white" />
+                <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+                  <Discord size={32} className="text-black" />
                 </div>
                 <div>
                   <h3 className="font-heading font-bold text-3xl text-white tracking-wide uppercase">
                     Join The Server
                   </h3>
-                  <p className="text-[#5865F2] font-semibold text-sm tracking-widest uppercase">
+                  <p className="text-gray-400 font-semibold text-sm tracking-widest uppercase">
                     Official Discord
                   </p>
                 </div>
@@ -89,7 +89,7 @@ export default function DiscordWidget() {
                 href={CLAN_CONFIG.discordInvite}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full text-center px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white font-heading font-bold text-lg uppercase tracking-wider rounded transition-colors duration-300 shadow-[0_0_20px_rgba(88,101,242,0.4)] hover:shadow-[0_0_30px_rgba(88,101,242,0.6)]"
+                className="w-full text-center px-8 py-4 bg-white hover:bg-gray-200 text-black font-heading font-bold text-lg uppercase tracking-wider rounded transition-colors duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]"
               >
                 Connect Now
               </a>

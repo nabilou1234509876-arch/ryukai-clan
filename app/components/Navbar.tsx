@@ -55,14 +55,14 @@ export default function Navbar() {
                 key={link.name}
                 href={link.path}
                 className={`relative px-4 py-2 font-heading font-medium tracking-wide uppercase text-sm transition-colors duration-300 ${
-                  isActive ? "text-white" : "text-gray-400 hover:text-ryukai-blue"
+                  isActive ? "text-white" : "text-gray-400 hover:text-white"
                 }`}
               >
                 {link.name}
                 {isActive && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute bottom-0 left-0 w-full h-[2px] bg-ryukai-blue box-glow"
+                    className="absolute bottom-0 left-0 w-full h-[2px] bg-white box-glow"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -77,7 +77,7 @@ export default function Navbar() {
             href={CLAN_CONFIG.discordInvite}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 bg-ryukai-blue hover:bg-ryukai-blue/80 text-white font-heading font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-300 hover:box-glow"
+            className="px-6 py-2.5 bg-white hover:bg-gray-200 text-black font-heading font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-300 hover:box-glow"
           >
             Join Discord
           </a>
@@ -107,7 +107,7 @@ export default function Navbar() {
                 href={link.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`font-heading font-medium tracking-wide uppercase text-lg ${
-                  pathname === link.path ? "text-ryukai-blue text-glow" : "text-gray-400"
+                  pathname === link.path ? "text-white text-glow" : "text-gray-400"
                 }`}
               >
                 {link.name}
@@ -117,7 +117,7 @@ export default function Navbar() {
               href={CLAN_CONFIG.discordInvite}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 px-8 py-3 bg-ryukai-blue text-white font-heading font-bold uppercase tracking-wider rounded-sm box-glow"
+              className="mt-4 px-8 py-3 bg-white text-black font-heading font-bold uppercase tracking-wider rounded-sm box-glow"
             >
               Join Discord
             </a>

@@ -34,16 +34,16 @@ function StatCard({ icon: Icon, value, label, delay }: { icon: any, value: numbe
   
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6, delay }}
-      className="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-ryukai-blue/50 transition-colors duration-300 relative overflow-hidden"
+      transition={{ duration: 0.8, delay, type: "spring", stiffness: 100 }}
+      className="glass-panel p-6 flex flex-col items-center justify-center text-center group hover:border-white/30 transition-colors duration-300 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-ryukai-blue/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+      <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
       
-      <div className="w-16 h-16 rounded-full bg-ryukai-dark border border-ryukai-border flex items-center justify-center mb-4 group-hover:border-ryukai-blue/50 group-hover:shadow-[0_0_15px_rgba(0,68,255,0.3)] transition-all duration-300 relative z-10">
-        <Icon className="text-ryukai-blue" size={28} />
+      <div className="w-16 h-16 rounded-full bg-ryukai-dark border border-ryukai-border flex items-center justify-center mb-4 group-hover:border-white/50 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300 relative z-10">
+        <Icon className="text-white" size={28} />
       </div>
       
       <div className="font-heading font-bold text-4xl text-white mb-2 relative z-10">
