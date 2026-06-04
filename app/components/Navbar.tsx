@@ -13,7 +13,6 @@ const navLinks = [
   { name: "Tryouts", path: "/tryouts" },
   { name: "Leaderboard", path: "/leaderboard" },
   { name: "Rules", path: "/rules" },
-  { name: "Gallery", path: "/gallery" },
   { name: "Staff", path: "/staff" },
 ];
 
@@ -39,8 +38,8 @@ export default function Navbar() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full bg-ryukai-blue/20 border border-ryukai-blue/50 flex items-center justify-center group-hover:box-glow transition-all duration-300">
-            <span className="font-heading font-bold text-xl text-white">R</span>
+          <div className="w-10 h-10 rounded-full border border-ryukai-blue/50 flex items-center justify-center group-hover:box-glow transition-all duration-300 overflow-hidden">
+            <img src={CLAN_CONFIG.logo} alt="Logo" className="w-full h-full object-cover" />
           </div>
           <span className="font-heading font-bold text-2xl tracking-wider text-white uppercase">
             {CLAN_CONFIG.name}

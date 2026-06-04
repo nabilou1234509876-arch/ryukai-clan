@@ -51,7 +51,7 @@ export default function HeroSection() {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = `rgba(0, 68, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(0, 80, 255, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -106,8 +106,13 @@ export default function HeroSection() {
           className="mb-8 relative"
         >
           {/* Main Logo Container */}
-          <div className="w-32 h-32 md:w-48 md:h-48 rounded-full border-2 border-ryukai-blue/50 flex items-center justify-center relative bg-ryukai-dark shadow-[0_0_50px_rgba(0,68,255,0.4)]">
-            <span className="font-heading font-bold text-6xl md:text-8xl text-white text-glow">R</span>
+          <div className="w-40 h-40 md:w-56 md:h-56 rounded-full border-2 border-ryukai-blue/40 flex items-center justify-center relative bg-ryukai-dark shadow-[0_0_60px_rgba(0,51,204,0.5)] overflow-hidden group">
+            <div className="absolute inset-0 bg-ryukai-blue/10 group-hover:bg-ryukai-blue/20 transition-colors duration-500 z-0" />
+            <img 
+              src={CLAN_CONFIG.logo} 
+              alt="Ryukai Logo" 
+              className="w-full h-full object-contain relative z-10 p-4 drop-shadow-[0_0_20px_rgba(0,80,255,0.6)]" 
+            />
             
             {/* Spinning ring */}
             <motion.div 

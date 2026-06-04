@@ -16,8 +16,8 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="col-span-1 md:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-ryukai-blue/20 border border-ryukai-blue/50 flex items-center justify-center">
-                <span className="font-heading font-bold text-lg text-white">R</span>
+              <div className="w-8 h-8 rounded-full border border-ryukai-blue/50 flex items-center justify-center overflow-hidden">
+                <img src={CLAN_CONFIG.logo} alt="Logo" className="w-full h-full object-cover" />
               </div>
               <span className="font-heading font-bold text-xl tracking-wider text-white uppercase">
                 {CLAN_CONFIG.name}

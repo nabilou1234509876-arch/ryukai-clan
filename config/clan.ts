@@ -7,36 +7,34 @@ export const CLAN_CONFIG = {
   name: "Ryukai Clan",
   tagline: "Rise Above. Dominate Together.",
   game: "The Strongest Battlegrounds",
-  discordInvite: "https://discord.gg/YOUR_INVITE_CODE", // Replace with your real invite
-  discordServerId: "YOUR_SERVER_ID", // Replace with your Discord Server ID for widget
+  discordInvite: "https://discord.gg/98JcUEP9",
+  discordServerId: "YOUR_SERVER_ID", // Optional for widget later
+  logo: "/logo.png", // Added logo path
 
   socialLinks: {
-    discord: "https://discord.gg/YOUR_INVITE_CODE",
+    discord: "https://discord.gg/98JcUEP9",
     youtube: "",
     twitter: "",
     roblox: "",
   },
 
   stats: {
-    members: 150,
-    wins: 3200,
-    activePlayers: 48,
-    clanRank: 12,
+    members: 120,
+    wins: 3,
+    activePlayers: 25,
+    clanRank: 106,
   },
 };
 
 // ============================================================
-//  FOUNDERS — Add Discord User IDs here
-//  Avatars & usernames are loaded from config below since
-//  Discord public API requires a bot token for user lookups.
-//  Fill out manually or add your bot-fetch API route later.
+//  FOUNDERS
 // ============================================================
 
 export interface FounderConfig {
   id: string;
   displayName: string;
   username: string;
-  avatar: string; // URL to avatar image or Discord CDN URL
+  avatar: string;
   role?: string;
   discordProfileUrl?: string;
 }
@@ -44,27 +42,19 @@ export interface FounderConfig {
 export const FOUNDERS: FounderConfig[] = [
   {
     id: "1153392848490737684",
-    displayName: "Founder Name", // Replace with real display name
-    username: "founder_username", // Replace with real username
-    avatar: "/images/founders/founder1.png", // Replace with real avatar URL or Discord CDN
-    role: "Founder & Leader",
+    displayName: "curz",
+    username: "curzzeddd",
+    avatar: "https://cdn.discordapp.com/avatars/1153392848490737684/dbad3d657cd5e0e22d5c2f914711bb4e.png?size=256",
+    role: "Founder",
     discordProfileUrl: "https://discord.com/users/1153392848490737684",
   },
   {
-    id: "FOUNDER_2_ID", // Replace with second founder's Discord ID
-    displayName: "Co-Founder Name",
-    username: "cofounder_username",
-    avatar: "/images/founders/founder2.png",
-    role: "Co-Founder",
-    discordProfileUrl: "https://discord.com/users/FOUNDER_2_ID",
-  },
-  {
-    id: "FOUNDER_3_ID", // Replace with third founder's Discord ID
-    displayName: "Co-Founder Name",
-    username: "cofounder_username3",
-    avatar: "/images/founders/founder3.png",
-    role: "Co-Founder",
-    discordProfileUrl: "https://discord.com/users/FOUNDER_3_ID",
+    id: "1444334130644127817",
+    displayName: "Destro",
+    username: "yepimdestro",
+    avatar: "https://cdn.discordapp.com/avatars/1444334130644127817/1ac09e82180a71775131f90550604862.png?size=256",
+    role: "Founder",
+    discordProfileUrl: "https://discord.com/users/1444334130644127817",
   },
 ];
 

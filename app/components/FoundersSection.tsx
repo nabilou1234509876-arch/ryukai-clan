@@ -45,14 +45,14 @@ export default function FoundersSection() {
                 <div className="relative w-28 h-28 mb-6">
                   <div className="absolute inset-0 rounded-full border-2 border-ryukai-blue/30 group-hover:border-ryukai-blue scale-[1.1] transition-all duration-300 group-hover:scale-100" />
                   <div className="w-full h-full rounded-full overflow-hidden bg-ryukai-dark border border-ryukai-border flex items-center justify-center relative">
-                    {/* Fallback for when avatar image doesn't exist */}
                     <Discord size={40} className="text-gray-600 absolute" />
                     
-                    {/* Image component (will show over fallback if src is valid) */}
                     {founder.avatar && (
-                      <div className="w-full h-full bg-ryukai-blue/10 flex items-center justify-center text-xl font-heading font-bold text-ryukai-blue uppercase">
-                        {founder.displayName.charAt(0)}
-                      </div>
+                      <img 
+                        src={founder.avatar} 
+                        alt={founder.displayName} 
+                        className="w-full h-full object-cover relative z-10"
+                      />
                     )}
                   </div>
                   
