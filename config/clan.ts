@@ -72,31 +72,31 @@ export interface StaffMember {
 
 export const STAFF_MEMBERS: StaffMember[] = [
   {
-    displayName: "Staff Member 1",
-    username: "staffmember1",
-    avatar: "/images/staff/staff1.png",
-    role: "Head Moderator",
+    displayName: "red",
+    username: "reddie0312",
+    avatar: "https://cdn.discordapp.com/avatars/1452711629321011352/9a826320150efcec69f4c4b9c45302bb.png?size=256",
+    role: "Staff Member",
     description: "Responsible for maintaining order and enforcing clan rules with precision.",
   },
   {
-    displayName: "Staff Member 2",
-    username: "staffmember2",
-    avatar: "/images/staff/staff2.png",
-    role: "Trial Manager",
+    displayName: "dev",
+    username: "firr.dev",
+    avatar: "https://cdn.discordapp.com/avatars/1355340039260737577/ef700a1313119b20f67d83d8debe3a17.png?size=256",
+    role: "Staff Member",
     description: "Oversees all tryout processes, evaluations, and candidate rankings.",
   },
   {
-    displayName: "Staff Member 3",
-    username: "staffmember3",
-    avatar: "/images/staff/staff3.png",
-    role: "Event Coordinator",
+    displayName: "Lee ???",
+    username: "huhnercaesarlol_53076",
+    avatar: "https://cdn.discordapp.com/avatars/1389950463566151750/48e6584975671b11e39d8cd412edbfc0.png?size=256",
+    role: "Staff Member",
     description: "Plans and organizes competitive events, tournaments, and scrimmages.",
   },
   {
-    displayName: "Staff Member 4",
-    username: "staffmember4",
-    avatar: "/images/staff/staff4.png",
-    role: "Community Manager",
+    displayName: "Brian",
+    username: "imbrian_tsb",
+    avatar: "https://cdn.discordapp.com/avatars/1324286623969443871/3a8fb2c96b6bf4a23a330af5f5e257f4.png?size=256",
+    role: "Staff Member",
     description: "Bridges the gap between leadership and community members.",
   },
 ];
@@ -107,24 +107,19 @@ export const STAFF_MEMBERS: StaffMember[] = [
 
 export interface LeaderboardEntry {
   rank: number;
+  displayName: string;
   username: string;
   avatar: string;
-  wins: number;
-  points: number;
+  stage: string;
   badge?: string; // e.g. "Champion", "Elite", "Rising Star"
 }
 
 export const LEADERBOARD: LeaderboardEntry[] = [
-  { rank: 1, username: "PlayerOne", avatar: "/images/avatars/p1.png", wins: 482, points: 9640, badge: "Champion" },
-  { rank: 2, username: "PlayerTwo", avatar: "/images/avatars/p2.png", wins: 421, points: 8420, badge: "Elite" },
-  { rank: 3, username: "PlayerThree", avatar: "/images/avatars/p3.png", wins: 398, points: 7960, badge: "Elite" },
-  { rank: 4, username: "PlayerFour", avatar: "/images/avatars/p4.png", wins: 365, points: 7300, badge: "Veteran" },
-  { rank: 5, username: "PlayerFive", avatar: "/images/avatars/p5.png", wins: 340, points: 6800, badge: "Veteran" },
-  { rank: 6, username: "PlayerSix", avatar: "/images/avatars/p6.png", wins: 312, points: 6240, badge: "Rising Star" },
-  { rank: 7, username: "PlayerSeven", avatar: "/images/avatars/p7.png", wins: 289, points: 5780, badge: "Rising Star" },
-  { rank: 8, username: "PlayerEight", avatar: "/images/avatars/p8.png", wins: 261, points: 5220, badge: "Member" },
-  { rank: 9, username: "PlayerNine", avatar: "/images/avatars/p9.png", wins: 243, points: 4860, badge: "Member" },
-  { rank: 10, username: "PlayerTen", avatar: "/images/avatars/p10.png", wins: 220, points: 4400, badge: "Member" },
+  { rank: 1, displayName: "levis", username: "ipqv", avatar: "https://cdn.discordapp.com/avatars/770679193000214538/710e82a77bcea67d13fda8ac6c5d9a26.png?size=256", stage: "stage 1 high", badge: "Champion" },
+  { rank: 2, displayName: "Skyvn", username: "skyvenn.", avatar: "https://cdn.discordapp.com/avatars/1076865486530289704/0c7c28b85791287e04fd9fb557ef21b8.png?size=256", stage: "stage 1 mid", badge: "Elite" },
+  { rank: 3, displayName: "Destro", username: "yepimdestro", avatar: "https://cdn.discordapp.com/avatars/1444334130644127817/1ac09e82180a71775131f90550604862.png?size=256", stage: "stage 1 weak", badge: "Elite" },
+  { rank: 4, displayName: "red", username: "reddie0312", avatar: "https://cdn.discordapp.com/avatars/1452711629321011352/9a826320150efcec69f4c4b9c45302bb.png?size=256", stage: "stage 1 weak", badge: "Veteran" },
+  { rank: 5, displayName: "curz", username: "curzzeddd", avatar: "https://cdn.discordapp.com/avatars/1153392848490737684/dbad3d657cd5e0e22d5c2f914711bb4e.png?size=256", stage: "stage 1 weak", badge: "Veteran" },
 ];
 
 // ============================================================
