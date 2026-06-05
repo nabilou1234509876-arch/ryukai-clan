@@ -195,7 +195,7 @@ export default function HeroSection() {
             Join Discord
           </a>
         </motion.div>
-      </div>
+      </motion.div>
       
       {/* Scroll indicator */}
       <motion.div 
