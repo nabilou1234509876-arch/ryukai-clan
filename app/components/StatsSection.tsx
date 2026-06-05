@@ -5,6 +5,8 @@ import { Users, Trophy, Activity, Target } from "lucide-react";
 import { CLAN_CONFIG } from "@/config/clan";
 import { useEffect, useState } from "react";
 
+import React from "react";
+
 // Simple counter animation hook
 function useCounter(end: number, duration: number = 2000) {
   const [count, setCount] = useState(0);
@@ -29,7 +31,7 @@ function useCounter(end: number, duration: number = 2000) {
   return count;
 }
 
-function StatCard({ icon: Icon, value, label, delay }: { icon: any, value: number, label: string, delay: number }) {
+function StatCard({ icon: Icon, value, label, delay }: { icon: React.ElementType, value: number, label: string, delay: number }) {
   const count = useCounter(value);
   
   return (

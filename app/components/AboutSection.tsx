@@ -35,7 +35,7 @@ export default function AboutSection() {
             
             <div className="space-y-6 font-body text-gray-300 leading-relaxed text-lg">
               <p>
-                Founded on the principles of dominance, strategy, and respect, <strong className="text-white">Ryukai Clan</strong> represents the pinnacle of competitive gameplay in {CLAN_CONFIG.game}. We aren't just players; we are a synchronized unit driven by a singular goal: to rise above the rest.
+                Founded on the principles of dominance, strategy, and respect, <strong className="text-white">Ryukai Clan</strong> represents the pinnacle of competitive gameplay in {CLAN_CONFIG.game}. We aren&apos;t just players; we are a synchronized unit driven by a singular goal: to rise above the rest.
               </p>
               <p>
                 Our community is forged in the fires of intense competition. We value members who possess not only raw mechanical skill, but the tactical mindset and composure required to adapt and conquer in high-stakes environments.

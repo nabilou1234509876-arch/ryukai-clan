@@ -78,7 +78,7 @@ export default function TryoutsPage() {
             
             <h3 className="font-heading font-bold text-2xl text-white uppercase mb-3">The Trial Phase</h3>
             <p className="text-gray-400 font-body text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
-              Candidates who pass the evaluation receive the 'Trial' role for 1-2 weeks. You will participate in clan events to prove your activity and cultural fit before gaining full membership.
+              Candidates who pass the evaluation receive the &apos;Trial&apos; role for 1-2 weeks. You will participate in clan events to prove your activity and cultural fit before gaining full membership.
             </p>
           </motion.div>
 

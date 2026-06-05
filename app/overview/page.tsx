@@ -43,7 +43,7 @@ export default function OverviewPage() {
               </div>
               <div className="glass-panel p-6 border-t-2 border-t-white">
                 <h3 className="font-heading font-bold text-xl text-white uppercase mb-3">Develop Talent</h3>
-                <p className="text-gray-400 text-sm">We don't just recruit the best; we build them. Our training regimens and veteran mentorship program elevate good players into great ones.</p>
+                <p className="text-gray-400 text-sm">We don&apos;t just recruit the best; we build them. Our training regimens and veteran mentorship program elevate good players into great ones.</p>
               </div>
             </div>
           </section>
