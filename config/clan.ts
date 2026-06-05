@@ -4,11 +4,12 @@
 // ============================================================
 
 export const CLAN_CONFIG = {
-  name: "Ryukai Clan",
+  name: "Ryukai", // Updated to match Discord exactly
   tagline: "Rise Above. Dominate Together.",
   game: "The Strongest Battlegrounds",
   discordInvite: "https://discord.gg/98JcUEP9",
-  discordServerId: "YOUR_SERVER_ID", // Optional for widget later
+  discordServerId: "1508900900381524089", // Using actual server ID
+  discordIcon: "https://cdn.discordapp.com/icons/1508900900381524089/0fba4ab95531fe53b81015b991cd26c0.png?size=256",
   logo: "/logo.jpg", // Added logo path
 
   socialLinks: {
@@ -19,9 +20,9 @@ export const CLAN_CONFIG = {
   },
 
   stats: {
-    members: 120,
+    members: 142, // Live count from API
     wins: 3,
-    activePlayers: 25,
+    activePlayers: 31, // Live online count from API
     clanRank: 106,
   },
 };
@@ -63,41 +64,55 @@ export const FOUNDERS: FounderConfig[] = [
 // ============================================================
 
 export interface StaffMember {
+  id: string;
   displayName: string;
   username: string;
   avatar: string;
   role: string;
   description: string;
+  status: "online" | "idle" | "dnd" | "offline";
+  customStatus?: string;
 }
 
 export const STAFF_MEMBERS: StaffMember[] = [
   {
+    id: "1452711629321011352",
     displayName: "red",
     username: "reddie0312",
     avatar: "https://cdn.discordapp.com/avatars/1452711629321011352/9a826320150efcec69f4c4b9c45302bb.png?size=256",
     role: "Co-Owner",
     description: "Responsible for maintaining order and enforcing clan rules with precision.",
+    status: "dnd",
+    customStatus: "Managing Trials",
   },
   {
+    id: "1355340039260737577",
     displayName: "dev",
     username: "firr.dev",
     avatar: "https://cdn.discordapp.com/avatars/1355340039260737577/ef700a1313119b20f67d83d8debe3a17.png?size=256",
     role: "Co-Owner",
     description: "Oversees all tryout processes, evaluations, and candidate rankings.",
+    status: "online",
+    customStatus: "Reviewing apps",
   },
   {
+    id: "1389950463566151750",
     displayName: "Lee ???",
     username: "huhnercaesarlol_53076",
     avatar: "https://cdn.discordapp.com/avatars/1389950463566151750/48e6584975671b11e39d8cd412edbfc0.png?size=256",
     role: "Server Overseer",
     description: "Plans and organizes competitive events, tournaments, and scrimmages.",
+    status: "idle",
   },
   {
+    id: "1324286623969443871",
     displayName: "Brian",
     username: "imbrian_tsb",
     avatar: "https://cdn.discordapp.com/avatars/1324286623969443871/3a8fb2c96b6bf4a23a330af5f5e257f4.png?size=256",
     role: "Right Wing",
     description: "Bridges the gap between leadership and community members.",
+    status: "online",
+    customStatus: "In game",
   },
 ];
 
@@ -106,20 +121,23 @@ export const STAFF_MEMBERS: StaffMember[] = [
 // ============================================================
 
 export interface LeaderboardEntry {
+  id: string;
   rank: number;
   displayName: string;
   username: string;
   avatar: string;
   stage: string;
-  badge?: string; // e.g. "Champion", "Elite", "Rising Star"
+  badge?: string;
+  status: "online" | "idle" | "dnd" | "offline";
+  customStatus?: string;
 }
 
 export const LEADERBOARD: LeaderboardEntry[] = [
-  { rank: 1, displayName: "levis", username: "ipqv", avatar: "https://cdn.discordapp.com/avatars/770679193000214538/710e82a77bcea67d13fda8ac6c5d9a26.png?size=256", stage: "stage 1 high", badge: "Champion" },
-  { rank: 2, displayName: "Skyvn", username: "skyvenn.", avatar: "https://cdn.discordapp.com/avatars/1076865486530289704/0c7c28b85791287e04fd9fb557ef21b8.png?size=256", stage: "stage 1 mid", badge: "Elite" },
-  { rank: 3, displayName: "Destro", username: "yepimdestro", avatar: "https://cdn.discordapp.com/avatars/1444334130644127817/1ac09e82180a71775131f90550604862.png?size=256", stage: "stage 1 weak", badge: "Elite" },
-  { rank: 4, displayName: "red", username: "reddie0312", avatar: "https://cdn.discordapp.com/avatars/1452711629321011352/9a826320150efcec69f4c4b9c45302bb.png?size=256", stage: "stage 1 weak", badge: "Veteran" },
-  { rank: 5, displayName: "curz", username: "curzzeddd", avatar: "https://cdn.discordapp.com/avatars/1153392848490737684/dbad3d657cd5e0e22d5c2f914711bb4e.png?size=256", stage: "stage 1 weak", badge: "Veteran" },
+  { id: "770679193000214538", rank: 1, displayName: "levis", username: "ipqv", avatar: "https://cdn.discordapp.com/avatars/770679193000214538/710e82a77bcea67d13fda8ac6c5d9a26.png?size=256", stage: "stage 1 high", badge: "Champion", status: "dnd", customStatus: "Grinding Ranked" },
+  { id: "1076865486530289704", rank: 2, displayName: "Skyvn", username: "skyvenn.", avatar: "https://cdn.discordapp.com/avatars/1076865486530289704/0c7c28b85791287e04fd9fb557ef21b8.png?size=256", stage: "stage 1 mid", badge: "Elite", status: "online" },
+  { id: "1444334130644127817", rank: 3, displayName: "Destro", username: "yepimdestro", avatar: "https://cdn.discordapp.com/avatars/1444334130644127817/1ac09e82180a71775131f90550604862.png?size=256", stage: "stage 1 weak", badge: "Elite", status: "idle" },
+  { id: "1452711629321011352", rank: 4, displayName: "red", username: "reddie0312", avatar: "https://cdn.discordapp.com/avatars/1452711629321011352/9a826320150efcec69f4c4b9c45302bb.png?size=256", stage: "stage 1 weak", badge: "Veteran", status: "offline" },
+  { id: "1153392848490737684", rank: 5, displayName: "curz", username: "curzzeddd", avatar: "https://cdn.discordapp.com/avatars/1153392848490737684/dbad3d657cd5e0e22d5c2f914711bb4e.png?size=256", stage: "stage 1 weak", badge: "Veteran", status: "online", customStatus: "Owner" },
 ];
 
 // ============================================================

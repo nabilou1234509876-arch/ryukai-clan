@@ -1,7 +1,8 @@
 import PageHeader from "@/app/components/PageHeader";
 import { STAFF_MEMBERS } from "@/config/clan";
-import { DiscIcon as Discord } from "lucide-react";
+import { DiscIcon as Discord, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
+import { getStatusColor } from "@/app/components/utils";
 
 export default function StaffPage() {
   return (
@@ -25,8 +26,13 @@ export default function StaffPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
-                className="glass-panel group relative overflow-hidden"
               >
+                <a 
+                  href={`https://discord.com/users/${staff.id}`} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="glass-panel group relative overflow-hidden flex flex-col h-full hover:-translate-y-2 transition-all duration-300 block"
+                >
                 {/* Top colored accent line */}
                 <div className="absolute top-0 left-0 w-full h-1 bg-ryukai-border group-hover:bg-white transition-colors duration-300 z-20" />
                 
@@ -44,28 +50,40 @@ export default function StaffPage() {
                         <Discord size={32} className="text-gray-600" />
                       )}
                     </div>
+                    {/* Status Dot */}
+                    <div className="absolute bottom-1 right-1 w-6 h-6 bg-ryukai-dark rounded-full flex items-center justify-center">
+                      <div className={`w-4 h-4 rounded-full ${getStatusColor(staff.status)} border border-ryukai-dark`} />
+                    </div>
                   </div>
                   
                   {/* Info */}
-                  <h3 className="font-heading font-bold text-xl text-white uppercase tracking-wide mb-1">
+                  <h3 className="font-heading font-bold text-xl text-white uppercase tracking-wide mb-1 flex items-center gap-2">
                     {staff.displayName}
                   </h3>
+                  
+                  {staff.customStatus && (
+                    <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-3 bg-white/5 px-2.5 py-1 rounded-full border border-white/10 group-hover:border-white/30 transition-colors">
+                      <MessageSquare size={12} />
+                      <span>{staff.customStatus}</span>
+                    </div>
+                  )}
                   
                   <div className="inline-flex items-center justify-center px-3 py-1 bg-white/10 border border-white/30 text-white text-xs font-bold font-heading uppercase tracking-widest rounded mb-4">
                     {staff.role}
                   </div>
                   
-                  <p className="font-body text-sm text-gray-400 mb-6 flex-grow">
+                  <p className="font-body text-sm text-gray-400 mb-6 flex-grow group-hover:text-gray-300 transition-colors">
                     {staff.description}
                   </p>
                   
                   {/* Discord Username */}
-                  <div className="w-full pt-4 border-t border-ryukai-border flex items-center justify-center gap-2 text-sm text-gray-500 group-hover:text-gray-300 transition-colors duration-300">
+                  <div className="w-full pt-4 border-t border-ryukai-border flex items-center justify-center gap-2 text-sm text-gray-500 group-hover:text-white transition-colors duration-300">
                     <Discord size={16} />
                     <span>@{staff.username}</span>
                   </div>
                   
                 </div>
+                </a>
               </motion.div>
             ))}
           </div>

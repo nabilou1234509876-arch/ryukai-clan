@@ -1,7 +1,8 @@
 import PageHeader from "@/app/components/PageHeader";
 import { LEADERBOARD } from "@/config/clan";
-import { Trophy, Flame, Star, Shield } from "lucide-react";
+import { Trophy, Flame, Star, Shield, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
+import { getStatusColor } from "@/app/components/utils";
 
 export default function LeaderboardPage() {
   const getBadgeIcon = (badge?: string) => {
@@ -103,28 +104,47 @@ export default function LeaderboardPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-panel hover:bg-ryukai-card transition-colors duration-300 p-4 rounded-lg flex flex-col md:grid md:grid-cols-12 gap-4 items-center group relative overflow-hidden"
               >
+                <a
+                  href={`https://discord.com/users/${entry.id}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="glass-panel hover:bg-ryukai-card transition-colors duration-300 p-4 rounded-lg flex flex-col md:grid md:grid-cols-12 gap-4 items-center group relative overflow-hidden block"
+                >
                 {/* Background highlight on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-ryukai-blue/0 via-ryukai-blue/5 to-ryukai-blue/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                 
                 <div className={`col-span-1 font-heading font-bold text-3xl w-full md:w-auto text-center ${getRankColor(entry.rank)}`}>
                   #{entry.rank}
                 </div>
                 
-                <div className="col-span-6 flex items-center gap-4 w-full">
-                  <div className="w-12 h-12 rounded-full bg-ryukai-dark border border-ryukai-border flex items-center justify-center font-heading font-bold text-white overflow-hidden">
-                    {entry.avatar ? (
-                      <img src={entry.avatar} alt={entry.displayName} className="w-full h-full object-cover" />
-                    ) : (
-                      entry.displayName.charAt(0)
+                <div className="col-span-6 flex items-center gap-4 w-full relative">
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-full bg-ryukai-dark border border-ryukai-border flex items-center justify-center font-heading font-bold text-white overflow-hidden group-hover:border-white transition-colors duration-300">
+                      {entry.avatar ? (
+                        <img src={entry.avatar} alt={entry.displayName} className="w-full h-full object-cover" />
+                      ) : (
+                        entry.displayName.charAt(0)
+                      )}
+                    </div>
+                    <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-[1.5px] border-ryukai-dark ${getStatusColor(entry.status)} z-10`} />
+                  </div>
+                  
+                  <div className="flex flex-col">
+                    <span className="font-heading font-bold text-xl text-white tracking-wide flex items-center gap-2">
+                      {entry.displayName} 
+                      <span className="text-sm text-gray-500 font-body lowercase group-hover:text-gray-300 transition-colors">@{entry.username}</span>
+                    </span>
+                    {entry.customStatus && (
+                      <span className="text-xs text-gray-400 font-body flex items-center gap-1 mt-0.5">
+                        <MessageSquare size={10} /> {entry.customStatus}
+                      </span>
                     )}
                   </div>
-                  <span className="font-heading font-bold text-xl text-white tracking-wide">{entry.displayName} <span className="text-sm text-gray-500 ml-2">@{entry.username}</span></span>
                 </div>
                 
                 <div className="col-span-2 flex items-center justify-center w-full">
-                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-ryukai-dark/50 border border-ryukai-border">
+                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-ryukai-dark/50 border border-ryukai-border group-hover:border-white/30 transition-colors">
                     {getBadgeIcon(entry.badge)}
                     <span className="text-xs font-heading font-bold uppercase tracking-wider text-gray-300">{entry.badge || "Member"}</span>
                   </div>
@@ -134,6 +154,7 @@ export default function LeaderboardPage() {
                   <span className="md:hidden text-xs text-gray-500 font-heading uppercase mb-1">Stage</span>
                   <span className="font-heading font-bold text-white text-lg uppercase tracking-widest">{entry.stage}</span>
                 </div>
+                </a>
               </motion.div>
             ))}
           </div>

@@ -1,13 +1,23 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { CLAN_CONFIG } from "@/config/clan";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -86,7 +96,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section ref={containerRef} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Particle Background */}
       <canvas
         ref={canvasRef}
@@ -105,7 +115,10 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center">
+      <motion.div 
+        style={{ y, opacity, scale }}
+        className="container relative z-10 mx-auto px-6 flex flex-col items-center text-center"
+      >
         <motion.div
           initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
           animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
