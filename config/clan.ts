@@ -13,8 +13,8 @@ export const CLAN_CONFIG = {
 
   socialLinks: {
     discord: "https://discord.gg/98JcUEP9",
-    youtube: "",
-    twitter: "",
+    youtube: "https://www.youtube.com/@YepImDestro",
+    tiktok: "https://www.tiktok.com/@yepimdestro",
     roblox: "",
   },
 
@@ -75,28 +75,28 @@ export const STAFF_MEMBERS: StaffMember[] = [
     displayName: "red",
     username: "reddie0312",
     avatar: "https://cdn.discordapp.com/avatars/1452711629321011352/9a826320150efcec69f4c4b9c45302bb.png?size=256",
-    role: "Staff Member",
+    role: "Co-Owner",
     description: "Responsible for maintaining order and enforcing clan rules with precision.",
   },
   {
     displayName: "dev",
     username: "firr.dev",
     avatar: "https://cdn.discordapp.com/avatars/1355340039260737577/ef700a1313119b20f67d83d8debe3a17.png?size=256",
-    role: "Staff Member",
+    role: "Co-Owner",
     description: "Oversees all tryout processes, evaluations, and candidate rankings.",
   },
   {
     displayName: "Lee ???",
     username: "huhnercaesarlol_53076",
     avatar: "https://cdn.discordapp.com/avatars/1389950463566151750/48e6584975671b11e39d8cd412edbfc0.png?size=256",
-    role: "Staff Member",
+    role: "Server Overseer",
     description: "Plans and organizes competitive events, tournaments, and scrimmages.",
   },
   {
     displayName: "Brian",
     username: "imbrian_tsb",
     avatar: "https://cdn.discordapp.com/avatars/1324286623969443871/3a8fb2c96b6bf4a23a330af5f5e257f4.png?size=256",
-    role: "Staff Member",
+    role: "Right Wing",
     description: "Bridges the gap between leadership and community members.",
   },
 ];

@@ -1,6 +1,7 @@
 import PageHeader from "@/app/components/PageHeader";
 import { CLAN_RULES } from "@/config/clan";
 import { Shield, Ban, Activity, Star, Users, MessageCircle, Tag, Lock } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function RulesPage() {
   const getIcon = (iconName: string) => {
@@ -32,8 +33,12 @@ export default function RulesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {CLAN_RULES.map((rule, index) => (
-              <div 
+              <motion.div 
                 key={rule.number}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
                 className="glass-panel p-8 relative overflow-hidden group hover:border-white/30 transition-all duration-300"
               >
                 {/* Background glow on hover */}
@@ -53,11 +58,11 @@ export default function RulesPage() {
                     {rule.title}
                   </h3>
                   
-                  <p className="font-body text-sm text-gray-400 leading-relaxed mt-auto">
+                  <p className="font-body text-sm text-gray-400 leading-relaxed mt-auto group-hover:text-gray-300 transition-colors duration-300">
                     {rule.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

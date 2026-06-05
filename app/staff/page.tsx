@@ -1,6 +1,7 @@
 import PageHeader from "@/app/components/PageHeader";
 import { STAFF_MEMBERS } from "@/config/clan";
 import { DiscIcon as Discord } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function StaffPage() {
   return (
@@ -18,8 +19,12 @@ export default function StaffPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {STAFF_MEMBERS.map((staff, index) => (
-              <div 
+              <motion.div 
                 key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, type: "spring", stiffness: 100 }}
                 className="glass-panel group relative overflow-hidden"
               >
                 {/* Top colored accent line */}
@@ -34,9 +39,7 @@ export default function StaffPage() {
                   <div className="relative mb-5">
                     <div className="w-24 h-24 rounded-full overflow-hidden bg-ryukai-dark border-2 border-ryukai-border group-hover:border-white transition-colors duration-300 flex items-center justify-center">
                       {staff.avatar ? (
-                        <div className="w-full h-full bg-white/10 flex items-center justify-center text-xl font-heading font-bold text-white uppercase">
-                          {staff.displayName.charAt(0)}
-                        </div>
+                        <img src={staff.avatar} alt={staff.displayName} className="w-full h-full object-cover" />
                       ) : (
                         <Discord size={32} className="text-gray-600" />
                       )}
@@ -57,13 +60,13 @@ export default function StaffPage() {
                   </p>
                   
                   {/* Discord Username */}
-                  <div className="w-full pt-4 border-t border-ryukai-border flex items-center justify-center gap-2 text-sm text-gray-500">
+                  <div className="w-full pt-4 border-t border-ryukai-border flex items-center justify-center gap-2 text-sm text-gray-500 group-hover:text-gray-300 transition-colors duration-300">
                     <Discord size={16} />
                     <span>@{staff.username}</span>
                   </div>
                   
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

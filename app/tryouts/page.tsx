@@ -1,6 +1,7 @@
 import PageHeader from "@/app/components/PageHeader";
 import { CLAN_CONFIG } from "@/config/clan";
 import { ClipboardList, Swords, Medal, ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function TryoutsPage() {
   return (
@@ -19,49 +20,67 @@ export default function TryoutsPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto mb-24">
           
           {/* Step 1 */}
-          <div className="glass-panel p-8 relative overflow-hidden group">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="glass-panel p-8 relative overflow-hidden group hover:border-white/30 transition-all duration-300"
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-ryukai-border group-hover:bg-white transition-colors duration-300" />
             <div className="text-6xl font-heading font-bold text-white/5 absolute -top-4 -right-2">01</div>
             
-            <div className="w-14 h-14 bg-ryukai-dark border border-ryukai-border rounded-lg flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300">
+            <div className="w-14 h-14 bg-ryukai-dark border border-ryukai-border rounded-lg flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:border-white/50 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
               <ClipboardList size={28} />
             </div>
             
             <h3 className="font-heading font-bold text-2xl text-white uppercase mb-3">The Application</h3>
-            <p className="text-gray-400 font-body text-sm leading-relaxed">
+            <p className="text-gray-400 font-body text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
               Join our Discord server and submit a formal application. You must meet our minimum requirements regarding age, playtime, and baseline stats before proceeding.
             </p>
-          </div>
+          </motion.div>
 
           {/* Step 2 */}
-          <div className="glass-panel p-8 relative overflow-hidden group">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="glass-panel p-8 relative overflow-hidden group hover:border-white/30 transition-all duration-300"
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-ryukai-border group-hover:bg-white transition-colors duration-300" />
             <div className="text-6xl font-heading font-bold text-white/5 absolute -top-4 -right-2">02</div>
             
-            <div className="w-14 h-14 bg-ryukai-dark border border-ryukai-border rounded-lg flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300">
+            <div className="w-14 h-14 bg-ryukai-dark border border-ryukai-border rounded-lg flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:border-white/50 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
               <Swords size={28} />
             </div>
             
             <h3 className="font-heading font-bold text-2xl text-white uppercase mb-3">The Evaluation</h3>
-            <p className="text-gray-400 font-body text-sm leading-relaxed">
+            <p className="text-gray-400 font-body text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
               If accepted, you will enter a 1v1 and team combat evaluation phase against our Trial Managers. We assess mechanics, positioning, and decision making under pressure.
             </p>
-          </div>
+          </motion.div>
 
           {/* Step 3 */}
-          <div className="glass-panel p-8 relative overflow-hidden group">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="glass-panel p-8 relative overflow-hidden group hover:border-white/30 transition-all duration-300"
+          >
             <div className="absolute top-0 left-0 w-full h-1 bg-ryukai-border group-hover:bg-white transition-colors duration-300" />
             <div className="text-6xl font-heading font-bold text-white/5 absolute -top-4 -right-2">03</div>
             
-            <div className="w-14 h-14 bg-ryukai-dark border border-ryukai-border rounded-lg flex items-center justify-center mb-6 text-white group-hover:scale-110 transition-transform duration-300">
+            <div className="w-14 h-14 bg-ryukai-dark border border-ryukai-border rounded-lg flex items-center justify-center mb-6 text-white group-hover:scale-110 group-hover:border-white/50 group-hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300">
               <Medal size={28} />
             </div>
             
             <h3 className="font-heading font-bold text-2xl text-white uppercase mb-3">The Trial Phase</h3>
-            <p className="text-gray-400 font-body text-sm leading-relaxed">
+            <p className="text-gray-400 font-body text-sm leading-relaxed group-hover:text-gray-300 transition-colors">
               Candidates who pass the evaluation receive the 'Trial' role for 1-2 weeks. You will participate in clan events to prove your activity and cultural fit before gaining full membership.
             </p>
-          </div>
+          </motion.div>
 
         </div>
 

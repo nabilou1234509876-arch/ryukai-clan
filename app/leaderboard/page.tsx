@@ -1,7 +1,7 @@
 import PageHeader from "@/app/components/PageHeader";
 import { LEADERBOARD } from "@/config/clan";
-import Image from "next/image";
 import { Trophy, Flame, Star, Shield } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function LeaderboardPage() {
   const getBadgeIcon = (badge?: string) => {
@@ -96,9 +96,13 @@ export default function LeaderboardPage() {
             </div>
 
             {/* Entries */}
-            {LEADERBOARD.map((entry) => (
-              <div 
+            {LEADERBOARD.map((entry, index) => (
+              <motion.div 
                 key={entry.rank}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="glass-panel hover:bg-ryukai-card transition-colors duration-300 p-4 rounded-lg flex flex-col md:grid md:grid-cols-12 gap-4 items-center group relative overflow-hidden"
               >
                 {/* Background highlight on hover */}
@@ -130,7 +134,7 @@ export default function LeaderboardPage() {
                   <span className="md:hidden text-xs text-gray-500 font-heading uppercase mb-1">Stage</span>
                   <span className="font-heading font-bold text-white text-lg uppercase tracking-widest">{entry.stage}</span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
